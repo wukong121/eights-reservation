@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bupt</groupId>
-    <artifactId>eightsReservation</artifactId>
+    <artifactId>eights-reservation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eightsReservation</name>
     <description>eightsReservation</description>
