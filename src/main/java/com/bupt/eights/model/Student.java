@@ -1,34 +1,17 @@
 package com.bupt.eights.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Student {
     
     private int studentId;
     
-    private String name;
+    private String firstName;
+    
+    private String lastName;
     
     private Long phoneNumber;
-    
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-    
-    public int getStudentId() {
-        return studentId;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public Long getPhoneNumber() {
-        return phoneNumber;
-    }
 }
