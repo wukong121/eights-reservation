@@ -1,0 +1,12 @@
+<!-- resources/mappers/StudentMapper.xml -->
+
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.StudentMapper">
+    
+    <select id="findStudentByPhoneNumber" resultType="Student">
+        SELECT s.*
+        FROM Student s
+        INNER JOIN User u ON s.studentId = u.userId
+        WHERE u.phoneNumber = #{phoneNumber}
+    </select>
+
+</mapper>

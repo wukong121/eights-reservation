@@ -1,0 +1,30 @@
+<!-- resources/mappers/RoomMapper.xml -->
+
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.RoomMapper">
+    <select id="findRoomById" resultType="Room">
+        SELECT r.*
+        FROM Room r
+        INNER JOIN User u ON r.roomId = u.userId
+        WHERE r.roomId = #{roomId}
+    </select>
+    
+    <select id="findRoomByName" resultType="Room">
+        SELECT r.*
+        FROM Room r
+        INNER JOIN User u ON r.roomId = u.userId
+        WHERE r.name = #{name}
+    </select>
+    
+    <select id="findRoomByAddress" resultType="Room">
+        SELECT r.*
+        FROM Room r
+        INNER JOIN User u ON r.roomId = u.userId
+        WHERE r.address = #{address}
+    </select>
+    
+    <select id="findRoomsBySpecialization" resultType="Room">
+        SELECT r.*
+        FROM Room r
+        WHERE r.specialization = #{specialization}
+    </select>
+</mapper>
