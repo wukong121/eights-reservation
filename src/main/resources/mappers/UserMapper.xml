@@ -1,0 +1,9 @@
+<!-- resources/mappers/UserMapper.xml -->
+
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.UserMapper">
+    <select id="findUserByEmailAndPassword" resultType="User">
+        SELECT u.*
+        FROM User u
+        WHERE u.email = #{email} AND u.password = #{password}
+    </select>
+</mapper>
