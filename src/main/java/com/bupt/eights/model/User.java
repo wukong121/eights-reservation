@@ -15,10 +15,6 @@ public class User {
     
     private String password;
     
-    private String conformPassword;
-    
     private Boolean enabled;
-    
-    private List<Authority> authorities;
     
 }

@@ -3,21 +3,24 @@ package com.bupt.eights.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Date;
+import java.sql.Time;
+
 @Getter
 @Setter
 public class Appointment {
     
-    private int privateId;
+    private int appointmentId;
     
-    private String date;
+    private Date date;
     
-    private String time;
+    private Time time;
     
     private String notes;
     
-    private String roomName;
+    private AppointmentStatus appointmentStatus;
     
-    private String studentName;
+    private Student student;
     
-    private AppointmentStatus status = AppointmentStatus.NEW;
+    private Room room;
 }

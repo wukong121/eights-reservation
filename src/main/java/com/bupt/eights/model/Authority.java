@@ -12,4 +12,6 @@ public class Authority {
     private String email;
     
     private AuthorityRole authorityRole;
+    
+    private User user;
 }

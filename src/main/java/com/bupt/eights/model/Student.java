@@ -13,5 +13,9 @@ public class Student {
     
     private String lastName;
     
+    private String Gender;
+    
     private Long phoneNumber;
+    
+    private User user;
 }
