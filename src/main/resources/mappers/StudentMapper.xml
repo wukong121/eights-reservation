@@ -8,5 +8,12 @@
         INNER JOIN User u ON s.studentId = u.userId
         WHERE u.phoneNumber = #{phoneNumber}
     </select>
+    
+    <select id="findStudentByEmail" resultType="Student">
+        SELECT s.*
+        FROM Student s
+        INNER JOIN User u ON s.studentId = u.userId
+        WHERE u.email = #{email}
+    </select>
 
 </mapper>
