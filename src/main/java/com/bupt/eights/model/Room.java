@@ -9,6 +9,8 @@ public class Room {
     
     private int roomId;
     
+    private String name;
+    
     private String address;
     
     private Category category;
