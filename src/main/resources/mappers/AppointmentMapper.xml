@@ -1,0 +1,14 @@
+<!-- resources/mappers/AppointmentMapper.xml -->
+
+<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.AppointmentMapper">
+    <select id="findOne" resultType="Appointment">
+        SELECT a.*
+        FROM Appointment a
+        WHERE id = #{appointmentId}
+    </select>
+    
+    <insert id="save" parameterType="Appointment">
+        INSERT INTO Appointment(`DATE`, `TIME`, NOTES, STATUS, STUDENT_NAME, ROOM_NAME)
+        VALUES(#{date}, #{time}, #{notes}, #{appointmentStatus}, #{student.name}, #{room.name});
+    </insert>
+</mapper>
