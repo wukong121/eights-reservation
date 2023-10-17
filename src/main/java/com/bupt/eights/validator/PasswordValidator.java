@@ -16,7 +16,6 @@ public class PasswordValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Student student = (Student) target;
         if (!student.getUser().getPassword().equals(student.getUser().getConfirmPassword())) {
-
             errors.rejectValue("user.password", ServiceConstants.PASSWORD_NOTMATCH_VALIDATION);
         }
     }
