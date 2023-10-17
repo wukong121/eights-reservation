@@ -2,6 +2,7 @@ package com.bupt.eights.utils;
 
 import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.AppointmentStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -49,6 +50,10 @@ public class ServiceUtil {
     public static String hashPassword(String rawPassword) {
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         return passwordEncoder.encode(rawPassword);
+    }
+    
+    public static String getEmail() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
     }
     
 }
