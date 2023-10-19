@@ -27,4 +27,9 @@
         FROM Room r
         WHERE r.specialization = #{specialization}
     </select>
+    
+    <insert id="save" parameterType="Room">
+        INSERT INTO Room(`NAME`, `ADDRESS`, `CATEGORY`, `SPECIALIZATION`)
+        VALUES(#{name}, #{address}, #{category}, #{specialization})
+    </insert>
 </mapper>

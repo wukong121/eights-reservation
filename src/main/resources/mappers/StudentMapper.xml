@@ -15,5 +15,10 @@
         INNER JOIN User u ON s.studentId = u.userId
         WHERE u.email = #{email}
     </select>
+    
+    <insert id="save" parameterType="Student">
+        INSERT INTO Student(`FIRST_NAME`, `LAST_NAME`, `GENDER`, `PHONE`, `USER_ID`)
+        VALUES(#{firstName}, #{lastName}, #{gender}, #{phoneNumber}, #{user.userId})
+    </insert>
 
 </mapper>

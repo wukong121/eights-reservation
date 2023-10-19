@@ -2,6 +2,7 @@ package com.bupt.eights.service;
 
 import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;

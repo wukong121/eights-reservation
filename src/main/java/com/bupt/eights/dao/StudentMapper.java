@@ -10,4 +10,6 @@ public interface StudentMapper {
     Student findStudentByPhoneNumber(@Param("phoneNumber") Long phoneNumber);
     
     Student findStudentByEmail(@Param("email") String email);
+    
+    void save(@Param("student") Student student);
 }

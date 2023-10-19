@@ -14,13 +14,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-//import java.net.http.HttpResponse;
 
 @Slf4j
 @Controller
 @RequestMapping("/user")
 public class LoginController {
-
+    
     @Autowired
     LoginService loginService;
     
@@ -33,7 +32,7 @@ public class LoginController {
         }
         return "";
     }
-
+    
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLogin(@ModelAttribute(value = "user") User user, HttpServletRequest request) {
         String path = redirectByRole(request);
@@ -57,14 +56,14 @@ public class LoginController {
         model.addAttribute("fail", true);
         return "login";
     }
-
+    
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public HttpResponse<String> createUser(@RequestBody User user) {
-
+        
         loginService.createUser(user);
-
-        HttpResponse response = new HttpResponse<>();
+        
+        HttpResponse<String> response = new HttpResponse<>();
         response.setStatus("success");
         response.setCode(HttpStatus.OK.value());
         response.setMessage("注册成功");
