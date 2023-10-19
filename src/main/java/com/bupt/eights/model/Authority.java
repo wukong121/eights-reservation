@@ -1,10 +1,9 @@
 package com.bupt.eights.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+
+@Data
 public class Authority {
     
     private int id;

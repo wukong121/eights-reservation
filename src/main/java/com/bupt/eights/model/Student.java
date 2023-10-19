@@ -1,10 +1,10 @@
 package com.bupt.eights.model;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class Student {
     
     private int studentId;
