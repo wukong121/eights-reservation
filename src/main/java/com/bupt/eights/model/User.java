@@ -5,14 +5,20 @@ import lombok.Data;
 
 @Data
 public class User {
+
+    private String id;
     
-    private int userId;
+    private String userName;
     
     private String email;
     
     private String password;
     
     private String confirmPassword;
+
+    private String verificationCode;
+
+    private String createTime;
     
     private Boolean enabled;
     
