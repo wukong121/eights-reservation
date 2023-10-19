@@ -1,9 +1,14 @@
 <!-- resources/mappers/UserMapper.xml -->
-
-<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.UserMapper">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bupt.eights.dao.UserMapper">
     <select id="findUserByEmailAndPassword" resultType="User">
         SELECT u.*
         FROM User u
         WHERE u.email = #{email} AND u.password = #{password}
     </select>
+
+    <insert id="insertUser" parameterType="com.bupt.eights.model.User">
+        INSERT INTO user(id, userName, email, password, createTime)
+        VALUES (#{id}, #{userName}, #{email}, #{password}, #{createTime});
+    </insert>
 </mapper>
