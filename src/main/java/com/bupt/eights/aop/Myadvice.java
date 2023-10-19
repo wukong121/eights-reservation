@@ -11,7 +11,7 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 @Slf4j
 public class Myadvice {
-    @Pointcut("execution(int com.bupt.eights.service.LoginService.equals())")
+    @Pointcut("execution(int com.bupt.eights.service.LoginService.createUser())")
     private void pt(){}
 
     @After("pt()")
