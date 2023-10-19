@@ -1,13 +1,12 @@
 package com.bupt.eights.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
 
 import java.sql.Date;
 import java.sql.Time;
 
-@Getter
-@Setter
+@Data
 public class Appointment {
     
     private int appointmentId;
