@@ -1,4 +1,4 @@
-package com.bupt.eights.service;
+package com.bupt.eights.service.impl;
 
 import com.bupt.eights.dao.AppointmentMapper;
 import com.bupt.eights.dao.RoomMapper;
@@ -7,6 +7,7 @@ import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.AppointmentStatus;
 import com.bupt.eights.model.Room;
 import com.bupt.eights.model.Student;
+import com.bupt.eights.service.AppointmentService;
 import com.bupt.eights.utils.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

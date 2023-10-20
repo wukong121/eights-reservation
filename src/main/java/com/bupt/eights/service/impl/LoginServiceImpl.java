@@ -1,7 +1,8 @@
-package com.bupt.eights.service;
+package com.bupt.eights.service.impl;
 
 import com.bupt.eights.dao.UserMapper;
 import com.bupt.eights.model.User;
+import com.bupt.eights.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

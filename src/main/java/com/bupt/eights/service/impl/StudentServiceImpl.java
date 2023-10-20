@@ -1,10 +1,11 @@
-package com.bupt.eights.service;
+package com.bupt.eights.service.impl;
 
 import com.bupt.eights.dao.StudentMapper;
 import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.Authority;
 import com.bupt.eights.model.AuthorityRole;
 import com.bupt.eights.model.Student;
+import com.bupt.eights.service.StudentService;
 import com.bupt.eights.utils.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
