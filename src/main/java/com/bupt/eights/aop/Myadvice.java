@@ -11,12 +11,14 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect
 @Slf4j
 public class Myadvice {
+    
     @Pointcut("execution(int com.bupt.eights.service.LoginService.equals())")
-    private void pt(){}
-
-    @After("pt()")
-    public void method(){
+    private void genericPointCut() {
+    }
+    
+    @After("genericPointCut()")
+    public void method() {
         log.info("New user created");
     }
-
+    
 }
