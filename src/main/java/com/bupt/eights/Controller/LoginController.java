@@ -1,12 +1,13 @@
 package com.bupt.eights.Controller;
 
 
+import com.bupt.eights.dto.RegisterDTO;
 import com.bupt.eights.model.AuthorityRole;
 import com.bupt.eights.model.User;
 import com.bupt.eights.response.HttpResponse;
 import com.bupt.eights.service.LoginService;
+import com.bupt.eights.utils.Constant;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
-@RequestMapping("/user")
+@RequestMapping(Constant.LOGIN_URL)
 public class LoginController {
     
     @Autowired
@@ -59,7 +60,7 @@ public class LoginController {
     
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public HttpResponse<String> createUser(@RequestBody User user) {
+    public HttpResponse<String> createUser(@RequestBody RegisterDTO user) {
         
         loginService.createUser(user);
         
