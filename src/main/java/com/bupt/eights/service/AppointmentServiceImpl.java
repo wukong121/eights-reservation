@@ -11,8 +11,9 @@ import com.bupt.eights.utils.ServiceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("AppointmentService")
 public class AppointmentServiceImpl implements AppointmentService {
+    
     @Autowired
     private AppointmentMapper appointmentMapper;
     

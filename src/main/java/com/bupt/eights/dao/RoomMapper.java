@@ -18,4 +18,6 @@ public interface RoomMapper {
     
     List<Room> findRoomsBySpecialization(@Param(value = "specialization") Specialization specialization);
     
+    void save(@Param(value = "room") Room room);
+    
 }

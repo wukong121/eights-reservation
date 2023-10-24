@@ -15,7 +15,7 @@ public class Student {
     
     private String Gender;
     
-    private Long phoneNumber;
+    private String phoneNumber;
     
     private User user;
 }

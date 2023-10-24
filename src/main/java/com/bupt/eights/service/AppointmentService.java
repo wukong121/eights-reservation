@@ -2,6 +2,7 @@ package com.bupt.eights.service;
 
 import com.bupt.eights.model.Appointment;
 
+
 public interface AppointmentService {
     
     void saveAppointment(Appointment appointment);

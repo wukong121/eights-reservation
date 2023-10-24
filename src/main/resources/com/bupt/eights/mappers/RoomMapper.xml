@@ -1,6 +1,6 @@
 <!-- resources/mappers/RoomMapper.xml -->
 
-<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.RoomMapper">
+<mapper namespace="com.bupt.eights.dao.RoomMapper">
     <select id="findRoomById" resultType="Room">
         SELECT r.*
         FROM Room r
@@ -27,4 +27,9 @@
         FROM Room r
         WHERE r.specialization = #{specialization}
     </select>
+    
+    <insert id="save" parameterType="Room">
+        INSERT INTO Room(`NAME`, `ADDRESS`, `CATEGORY`, `SPECIALIZATION`)
+        VALUES(#{name}, #{address}, #{category}, #{specialization})
+    </insert>
 </mapper>
