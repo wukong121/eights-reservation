@@ -1,7 +1,12 @@
 package com.bupt.eights.utils;
 
+import com.bupt.eights.dto.RegisterDTO;
 import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.AppointmentStatus;
+import com.bupt.eights.model.User;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import lombok.SneakyThrows;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ServiceUtil {
+    
+    private static final ObjectMapper mapper = new ObjectMapper();
     
     private static Date getCurrentDate() {
         Calendar calendar = Calendar.getInstance();
@@ -54,6 +61,15 @@ public class ServiceUtil {
     
     public static String getEmail() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
+    }
+    
+    @SneakyThrows
+    public static String mapObjectToJson(Object object) {
+        return mapper.writeValueAsString(object);
+    }
+    
+    public static User mapRegiterDTOToRegister(RegisterDTO registerDTO) {
+        return mapper.convertValue(registerDTO, User.class);
     }
     
 }
