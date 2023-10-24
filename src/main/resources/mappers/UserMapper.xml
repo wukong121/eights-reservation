@@ -8,7 +8,7 @@
     </select>
 
     <insert id="insertUser" parameterType="com.bupt.eights.model.User">
-        INSERT INTO user(id, userName, email, password, createTime)
-        VALUES (#{id}, #{userName}, #{email}, #{password}, #{createTime});
+        INSERT INTO User(userId, userName, email, password, createTime, authority)
+        VALUES (#{userId}, #{userName}, #{email}, #{password}, #{createTime}, #{authority});
     </insert>
 </mapper>
