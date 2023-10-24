@@ -20,6 +20,7 @@ spring:
         stat:
           enabled: false
     url: jdbc:mysql://localhost:3306/eights?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
-    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+#    driver-class-name: com.alibaba.druid.proxy.DruidDriver
     username: eights
     password: eights
+    driver-class-name: com.mysql.cj.jdbc.Driver

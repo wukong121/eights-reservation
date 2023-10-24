@@ -9,6 +9,6 @@
 
     <insert id="insertUser" parameterType="com.bupt.eights.model.User">
         INSERT INTO User(userId, userName, email, password, createTime, authority)
-        VALUES (#{userId}, #{userName}, #{email}, #{password}, #{createTime}, #{authority});
+        VALUES (#{userId}, #{userName}, #{email}, #{password}, #{createTime}, #{authority, typeHandler=org.apache.ibatis.type.EnumTypeHandler});
     </insert>
 </mapper>

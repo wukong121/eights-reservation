@@ -1,6 +1,6 @@
 <!-- resources/mappers/RoomMapper.xml -->
 
-<mapper xmlns="http://mybatis.org/schema/mybatis-mapper" namespace="com.bupt.eights.dao.RoomMapper">
+<mapper namespace="com.bupt.eights.dao.RoomMapper">
     <select id="findRoomById" resultType="Room">
         SELECT r.*
         FROM Room r

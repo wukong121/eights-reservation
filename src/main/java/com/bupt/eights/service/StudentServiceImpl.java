@@ -21,10 +21,7 @@ public class StudentServiceImpl implements StudentService {
     
     @Override
     public void saveStudent(Student student) {
-        Authority authority = new Authority();
-        authority.setAuthorityRole(AuthorityRole.ROLE_STUDENT);
-        authority.setEmail(student.getUser().getEmail());
-        student.getUser().setAuthority(authority);
+        student.getUser().setAuthority(AuthorityRole.ROLE_STUDENT);
         String encodedPassword = ServiceUtil.hashPassword(student.getUser().getPassword());
         student.getUser().setPassword(encodedPassword);
         

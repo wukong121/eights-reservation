@@ -6,7 +6,7 @@
     <properties>
         <property name="username" value="eights"/>
         <property name="password" value="eights"/>
-        <property name="driver" value="com.alibaba.druid.proxy.DruidDriver"/>
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
         <property name="url"
             value="jdbc:mysql://localhost:3306/eights?use&amp;nicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true&amp;verifyServerCertificate=false&amp;useSSL=false"/>
     </properties>
@@ -14,7 +14,7 @@
         <package name="com.bupt.eights.model"/>
     </typeAliases>
     <typeHandlers>
-        <typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.bupt.eights.model.AuthorityRole" jdbcType="VARCHAR"/>
     </typeHandlers>
     <environments default="development">
         <environment id="development">
@@ -28,6 +28,9 @@
         </environment>
     </environments>
     <mappers>
-        <package name="com.bupt.eights.dao"/>
+<!--        <package name="com.bupt.eights.mappers"/>-->
+        <mapper resource="com/bupt/eights/mappers/UserMapper.xml"/>
+<!--        <mapper resource="com/bupt/eights/mappers/RoomMapper.xml"/>-->
+<!--        <mapper resource="com/bupt/eights/mappers/StudentMapper.xml"/>-->
     </mappers>
 </configuration>
