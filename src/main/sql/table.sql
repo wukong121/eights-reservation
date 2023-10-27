@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS User;
 CREATE TABLE User
 (
     userId     VARCHAR(255) NOT NULL DEFAULT '' COMMENT '用户id',
-    userName   VARCHAR(10)  NOT NULL DEFAULT 'user' COMMENT '用户名称',
+    userName   VARCHAR(10)  NOT NULL DEFAULT  'user' unique COMMENT '用户名称',
     email      VARCHAR(30)  NOT NULL DEFAULT '' COMMENT '邮箱',
     password   VARCHAR(63)  NOT NULL DEFAULT '' COMMENT '密码',
     createTime TIMESTAMP    NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
