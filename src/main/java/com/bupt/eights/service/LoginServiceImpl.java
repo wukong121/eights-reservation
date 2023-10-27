@@ -37,4 +37,12 @@ public class LoginServiceImpl implements LoginService {
         
         return userMapper.insertUser(user);
     }
+
+    public boolean loginValidate(User user) {
+
+        String password = userMapper.getPasswordByUserName(user.getUserName());
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+
+        return bCryptPasswordEncoder.matches(user.getPassword(), password);
+    }
 }

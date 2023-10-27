@@ -11,4 +11,10 @@
         INSERT INTO User(userId, userName, email, password, createTime, authority)
         VALUES (#{userId}, #{userName}, #{email}, #{password}, #{createTime}, #{authority, typeHandler=org.apache.ibatis.type.EnumTypeHandler});
     </insert>
+
+    <select id="getPasswordByUserName">
+        SELECT password
+        FROM User
+        WHERE userName = #{userName}
+    </select>
 </mapper>

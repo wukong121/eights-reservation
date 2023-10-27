@@ -71,4 +71,16 @@ public class LoginController {
         log.info("用户" + user.getUserName() + "注册成功");
         return response;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/loginValidate", method = RequestMethod.GET)
+    public HttpResponse<String> loginValidate(@RequestBody User user) {
+
+        HttpResponse<String> response = new HttpResponse<>();
+        response.setStatus("success");
+        response.setCode(HttpStatus.OK.value());
+        if (loginService.loginValidate(user)) response.setMessage("Success to login to eight-reservation system");
+        else response.setMessage("Fail to login to eight-reservation system");
+        return response;
+    }
 }
