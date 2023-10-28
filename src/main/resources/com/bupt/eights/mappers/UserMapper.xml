@@ -1,5 +1,7 @@
-<!-- resources/mappers/UserMapper.xml -->
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bupt.eights.dao.UserMapper">
     <select id="findUserByEmailAndPassword" resultType="User">
         SELECT u.*
@@ -8,7 +10,7 @@
     </select>
 
     <insert id="insertUser" parameterType="com.bupt.eights.model.User">
-        INSERT INTO User(userId, userName, email, password, createTime, authority)
-        VALUES (#{userId}, #{userName}, #{email}, #{password}, #{createTime}, #{authority, typeHandler=org.apache.ibatis.type.EnumTypeHandler});
+        INSERT INTO User(userId, username, email, phone_number, gender, nick_name, password, create_time, authority)
+        VALUES (#{userId}, #{userName}, #{email}, #{phoneNumber}, #{gender}, #{nickName}, #{password}, #{createTime}, #{authority, typeHandler=org.apache.ibatis.type.EnumTypeHandler});
     </insert>
 </mapper>

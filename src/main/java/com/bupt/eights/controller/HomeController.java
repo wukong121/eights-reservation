@@ -1,4 +1,4 @@
-package com.bupt.eights.Controller;
+package com.bupt.eights.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

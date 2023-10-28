@@ -17,13 +17,18 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class RegisterDTO {
     
-    @NotBlank String userName;
-    
     @NotBlank String email;
+    
+    @NotBlank String gender;
+    
+    String nickName;
     
     @NotBlank String password;
     
-    @NotBlank String confirmPassword;
+    @NotBlank String phone;
     
-    String verificationCode;
+    @NotBlank String prefix;
+    
+    @NotBlank String userName;
+    
 }

@@ -15,6 +15,9 @@
     </typeAliases>
     <typeHandlers>
         <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.bupt.eights.model.AuthorityRole" jdbcType="VARCHAR"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.bupt.eights.model.Category" jdbcType="VARCHAR"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.bupt.eights.model.AppointmentStatus" jdbcType="VARCHAR"/>
+        <typeHandler handler="org.apache.ibatis.type.EnumTypeHandler" javaType="com.bupt.eights.model.Specialization" jdbcType="VARCHAR"/>
     </typeHandlers>
     <environments default="development">
         <environment id="development">
@@ -28,9 +31,9 @@
         </environment>
     </environments>
     <mappers>
-<!--        <package name="com.bupt.eights.mappers"/>-->
         <mapper resource="com/bupt/eights/mappers/UserMapper.xml"/>
-<!--        <mapper resource="com/bupt/eights/mappers/RoomMapper.xml"/>-->
-<!--        <mapper resource="com/bupt/eights/mappers/StudentMapper.xml"/>-->
+        <mapper resource="com/bupt/eights/mappers/RoomMapper.xml"/>
+        <mapper resource="com/bupt/eights/mappers/StudentMapper.xml"/>
+        <mapper resource="com/bupt/eights/mappers/AppointmentMapper.xml"/>
     </mappers>
 </configuration>

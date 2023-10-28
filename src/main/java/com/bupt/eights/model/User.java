@@ -2,7 +2,6 @@ package com.bupt.eights.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.EnumNaming;
 import lombok.Data;
 
 
@@ -17,11 +16,13 @@ public class User {
     
     private String email;
     
-    private String password;
+    private String phoneNumber;
     
-    private String confirmPassword;
-
-    private String verificationCode;
+    private String gender;
+    
+    private String nickName;
+    
+    private String password;
 
     private String createTime;
     

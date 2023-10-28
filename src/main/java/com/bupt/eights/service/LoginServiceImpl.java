@@ -21,15 +21,6 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public int createUser(RegisterDTO userDTO) {
         User user = ServiceUtil.mapRegiterDTOToRegister(userDTO);
-        // set id
-        String uuid = UUID.randomUUID().toString();
-        user.setUserId(uuid);
-        user.setAuthority(AuthorityRole.ROLE_ADMIN);
-        // set createTime
-        Date now = new Date();
-        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        user.setCreateTime(date.format(now));
-        
         return userMapper.insertUser(user);
     }
 }

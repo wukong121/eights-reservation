@@ -1,5 +1,7 @@
-<!-- resources/mappers/RoomMapper.xml -->
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bupt.eights.dao.RoomMapper">
     <select id="findRoomById" resultType="Room">
         SELECT r.*
@@ -25,11 +27,11 @@
     <select id="findRoomsBySpecialization" resultType="Room">
         SELECT r.*
         FROM Room r
-        WHERE r.specialization = #{specialization}
+        WHERE r.specialization = #{specialization, typeHandler=org.apache.ibatis.type.EnumTypeHandler}
     </select>
     
     <insert id="save" parameterType="Room">
         INSERT INTO Room(`NAME`, `ADDRESS`, `CATEGORY`, `SPECIALIZATION`)
-        VALUES(#{name}, #{address}, #{category}, #{specialization})
+        VALUES(#{name}, #{address}, #{category, typeHandler=org.apache.ibatis.type.EnumTypeHandler}, #{specialization, typeHandler=org.apache.ibatis.type.EnumTypeHandler})
     </insert>
 </mapper>

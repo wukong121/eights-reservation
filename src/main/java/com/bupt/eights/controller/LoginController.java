@@ -1,4 +1,4 @@
-package com.bupt.eights.Controller;
+package com.bupt.eights.controller;
 
 
 import com.bupt.eights.dto.RegisterDTO;
@@ -6,7 +6,7 @@ import com.bupt.eights.model.AuthorityRole;
 import com.bupt.eights.model.User;
 import com.bupt.eights.response.HttpResponse;
 import com.bupt.eights.service.LoginService;
-import com.bupt.eights.utils.Constant;
+import com.bupt.eights.utils.URLConstant;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
-@RequestMapping(Constant.LOGIN_URL)
+@RequestMapping(URLConstant.LOGIN_URL)
 public class LoginController {
     
     @Autowired

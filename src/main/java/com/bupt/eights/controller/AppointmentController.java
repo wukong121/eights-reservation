@@ -1,4 +1,4 @@
-package com.bupt.eights.Controller;
+package com.bupt.eights.controller;
 
 public class AppointmentController {
 
