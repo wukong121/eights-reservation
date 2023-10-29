@@ -58,6 +58,7 @@ public class LoginController {
         return "login";
     }
     
+    @CrossOrigin
     @ResponseBody
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public HttpResponse<String> createUser(@RequestBody RegisterDTO user) {
