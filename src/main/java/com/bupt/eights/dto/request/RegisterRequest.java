@@ -1,4 +1,4 @@
-package com.bupt.eights.dto;
+package com.bupt.eights.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -15,7 +15,7 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @Builder
 @Data
-public class RegisterDTO {
+public class RegisterRequest {
     
     @NotBlank String email;
     
