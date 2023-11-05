@@ -12,6 +12,8 @@ public interface UserMapper {
     
     User findUserByEmailAndPassword(@Param(value = "email") String email, @Param(value = "password") String password);
     
+    User findUserByUserName(@Param(value = "userName") String userName);
+    
     int insertUser(User user);
     
 }

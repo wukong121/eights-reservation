@@ -14,12 +14,15 @@ CREATE TABLE Student
 DROP TABLE IF EXISTS User;
 CREATE TABLE User
 (
-    userId     VARCHAR(255) NOT NULL DEFAULT '' COMMENT '用户id',
-    userName   VARCHAR(10)  NOT NULL DEFAULT 'user' COMMENT '用户名称',
-    email      VARCHAR(30)  NOT NULL DEFAULT '' COMMENT '邮箱',
-    password   VARCHAR(63)  NOT NULL DEFAULT '' COMMENT '密码',
-    createTime TIMESTAMP    NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
-    authority  VARCHAR(15)  NOT NULL DEFAULT 'ROLE_STUDENT' COMMENT '用户角色'
+    userId       VARCHAR(255) NOT NULL DEFAULT '' COMMENT '用户id',
+    username     VARCHAR(10)  NOT NULL DEFAULT 'user' COMMENT '用户名称',
+    email        VARCHAR(30)  NOT NULL DEFAULT '' COMMENT '邮箱',
+    phone_number VARCHAR(20)  NOT NULL DEFAULT '' COMMENT '手机号码',
+    gender       VARCHAR(10)  NOT NULL DEFAULT '' COMMENT '性别',
+    nick_name    VARCHAR(10)  NOT NULL DEFAULT '' COMMENT '昵称',
+    password     VARCHAR(63)  NOT NULL DEFAULT '' COMMENT '密码',
+    create_time  TIMESTAMP    NOT NULL DEFAULT current_timestamp COMMENT '创建时间',
+    authority    VARCHAR(15)  NOT NULL DEFAULT 'ROLE_STUDENT' COMMENT '用户角色'
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4 COMMENT '用户表';
 

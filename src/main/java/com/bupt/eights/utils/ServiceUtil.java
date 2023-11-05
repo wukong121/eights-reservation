@@ -1,22 +1,24 @@
 package com.bupt.eights.utils;
 
-import com.bupt.eights.dto.RegisterDTO;
+import com.bupt.eights.dto.request.RegisterRequest;
 import com.bupt.eights.model.Appointment;
 import com.bupt.eights.model.AppointmentStatus;
+import com.bupt.eights.model.AuthorityRole;
 import com.bupt.eights.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import lombok.SneakyThrows;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 public class ServiceUtil {
     
@@ -68,8 +70,19 @@ public class ServiceUtil {
         return mapper.writeValueAsString(object);
     }
     
-    public static User mapRegiterDTOToRegister(RegisterDTO registerDTO) {
-        return mapper.convertValue(registerDTO, User.class);
+    public static User mapRequestToRegister(RegisterRequest registerRequest) {
+        User user = mapper.convertValue(registerRequest, User.class);
+        // set id
+        String uuid = UUID.randomUUID().toString();
+        user.setUserId(uuid);
+        user.setAuthority(AuthorityRole.ROLE_STUDENT);
+        // set createTime
+        Date now = new Date();
+        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        user.setCreateTime(date.format(now));
+        // set phoneNumber
+        user.setPhoneNumber(registerRequest.getPrefix() + registerRequest.getPhone());
+        return user;
     }
     
 }
